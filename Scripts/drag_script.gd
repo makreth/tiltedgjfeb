@@ -1,4 +1,4 @@
-extends StaticBody2D
+class_name Item extends Area2D
 
 @export
 var value := 1

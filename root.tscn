@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkwm3a1igrgc2"]
+[gd_scene load_steps=8 format=3 uid="uid://bkwm3a1igrgc2"]
 
 [ext_resource type="Script" uid="uid://mumyd4xeauhs" path="res://Scripts/drag_script.gd" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://b3hur6k6v8ntd" path="res://Scripts/item_mover.gd" id="2_vvh5c"]
+[ext_resource type="Texture2D" uid="uid://cevexd6eq7x5t" path="res://Assets/placeholder.tres" id="3_28aoi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vho56"]
-size = Vector2(32, 32)
+size = Vector2(64, 64)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq8q7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -19,15 +21,22 @@ corner_radius_bottom_left = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_pyidc"]
 line_spacing = 0.0
-font_size = 20
+font_size = 30
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq8q7"]
+size = Vector2(64, 64)
+
 [node name="Root" type="Node2D"]
 
-[node name="DemoNumber" type="StaticBody2D" parent="."]
-position = Vector2(41, 36)
-input_pickable = true
+[node name="StepTimer" type="Timer" parent="."]
+wait_time = 1.3299999999999998
+autostart = true
+
+[node name="DemoNumber" type="Area2D" parent="."]
+z_index = 5
+position = Vector2(32, 32)
 script = ExtResource("1_pq8q7")
 value = 4
 
@@ -41,10 +50,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -58,5 +67,15 @@ label_settings = SubResource("LabelSettings_pyidc")
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
+
+[node name="DemoBelt" type="Area2D" parent="."]
+position = Vector2(32, 32)
+script = ExtResource("2_vvh5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="DemoBelt"]
+texture = ExtResource("3_28aoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DemoBelt"]
+shape = SubResource("RectangleShape2D_pq8q7")
 
 [connection signal="input_event" from="DemoNumber" to="DemoNumber" method="_on_StaticBody2D_input_event"]
