@@ -19,10 +19,10 @@ var _angle_mapping = {
 }
 
 var _shift_mapping = {
-	Facing.UP : [0, -32],
-	Facing.RIGHT : [32, 0],
-	Facing.DOWN : [0, 32],
-	Facing.LEFT : [-32, 0],
+	Facing.UP : [0, -64],
+	Facing.RIGHT : [64, 0],
+	Facing.DOWN : [0, 64],
+	Facing.LEFT : [-64, 0],
 }
 
 func _ready() -> void:
@@ -38,11 +38,8 @@ func _ready() -> void:
 		sprite.transform = sprite.transform.rotated(_angle_mapping[facing])
 
 func _push_to_facing():
-	var shift = _shift_mapping[facing]
-	var n_x = shift[0]
-	var n_y = shift[1]
 
-	var items = get_overlapping_bodies()
+	var items = get_overlapping_areas()
 
 	if items.size() == 0:
 		return
@@ -52,5 +49,8 @@ func _push_to_facing():
 
 	var item : Area2D = items[0]
 
-	item.transform.x = n_x
-	item.transform.y = n_y
+	var shift = _shift_mapping[facing]
+	var n_x = shift[0] + item.position.x
+	var n_y = shift[1] + item.position.y
+
+	item.position = Vector2(n_x, n_y)
