@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkwm3a1igrgc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vho56"]
+size = Vector2(32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq8q7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.88047445, 0.2257067, 0.73494333, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_pyidc"]
+line_spacing = 0.0
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Root" type="Node2D"]
+
+[node name="DemoNumber" type="StaticBody2D" parent="."]
+position = Vector2(41, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DemoNumber"]
+shape = SubResource("RectangleShape2D_vho56")
+
+[node name="PanelContainer" type="PanelContainer" parent="DemoNumber"]
+layout_direction = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pq8q7")
+
+[node name="Label" type="Label" parent="DemoNumber/PanelContainer"]
+layout_direction = 2
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_pyidc")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
