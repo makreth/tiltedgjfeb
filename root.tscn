@@ -32,13 +32,16 @@ position = Vector2(352, 96)
 facing = 3
 
 [node name="ConveyorInput" parent="." instance=ExtResource("3_jnlp7")]
-position = Vector2(352, 224)
+position = Vector2(352, 160)
+needed = 5
+
+[node name="ConveyorInput2" parent="." instance=ExtResource("3_jnlp7")]
+position = Vector2(480, 224)
 needed = 5
 
 [node name="NumberGen" type="Area2D" parent="."]
 position = Vector2(96, 32)
 script = ExtResource("4_l8v81")
-weights = [0.5, 0.5]
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="NumberGen"]
