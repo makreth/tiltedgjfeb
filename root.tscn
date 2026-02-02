@@ -37,6 +37,7 @@ needed = 5
 
 [node name="ConveyorInput2" parent="." instance=ExtResource("3_jnlp7")]
 position = Vector2(480, 224)
+targetNumber = 3
 needed = 5
 
 [node name="NumberGen" type="Area2D" parent="."]
