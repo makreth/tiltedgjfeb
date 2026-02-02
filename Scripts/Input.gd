@@ -40,7 +40,7 @@ func trigger_input(item : Item):
 		return
 	sprite.play_backwards()
 	item.queue_free()
-	if item.value == needed and deposited < needed:
+	if deposited < needed:
 		deposited += 1
 		draw_labels()
 	open = false
