@@ -32,7 +32,6 @@ func draw_labels():
 	targetLabel.text = str(targetNumber)
 	depoLabel.text = str(deposited) + "/" + str(needed)
 
-
 func trigger_input(item : Item):
 	if item.is_dragging:
 		return
@@ -43,5 +42,5 @@ func trigger_input(item : Item):
 	item.queue_free()
 	if item.value == needed and deposited < needed:
 		deposited += 1
+		draw_labels()
 	open = false
-	draw_labels()
