@@ -2,3 +2,4 @@
 .godot/
 /android/
 *import
+/Assets/render-tmp
