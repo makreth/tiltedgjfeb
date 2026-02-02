@@ -41,7 +41,13 @@ func _ready() -> void:
 
 	sprite = get_node_or_null(spritePath)
 
+	rotate_to_facing()
+
 	sprite.play()
+
+func rotate_to_facing():
+	if sprite:
+		sprite.rotation = _angle_mapping[facing]
 
 func _toggle_should_push():
 	_should_push = true
