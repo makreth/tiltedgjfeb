@@ -1,38 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkwm3a1igrgc2"]
+[gd_scene load_steps=6 format=3 uid="uid://bkwm3a1igrgc2"]
 
-[ext_resource type="Script" uid="uid://mumyd4xeauhs" path="res://Scripts/drag_script.gd" id="1_pq8q7"]
-[ext_resource type="Script" uid="uid://b3hur6k6v8ntd" path="res://Scripts/item_mover.gd" id="2_vvh5c"]
-[ext_resource type="SpriteFrames" uid="uid://dq0l0jdkd6j57" path="res://Resources/sprites/gear_rotate.tres" id="3_vvh5c"]
-[ext_resource type="SpriteFrames" uid="uid://cbf2gkb3570ug" path="res://Resources/sprites/box.tres" id="4_28aoi"]
-[ext_resource type="Script" uid="uid://wfmgmxm8gjj1" path="res://Scripts/Input.gd" id="4_jnlp7"]
+[ext_resource type="PackedScene" uid="uid://b7xyong4wg3if" path="res://SavedNodes/conveyor_belt.tscn" id="2_l8v81"]
+[ext_resource type="PackedScene" uid="uid://c3xknhixya5sn" path="res://SavedNodes/conveyor_input.tscn" id="3_jnlp7"]
+[ext_resource type="Script" uid="uid://bh82res0btl5n" path="res://Scripts/Output.gd" id="4_l8v81"]
+[ext_resource type="SpriteFrames" uid="uid://mh22nx38gjr7" path="res://Resources/sprites/unary_machine.tres" id="6_l8v81"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vho56"]
-size = Vector2(48, 48)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq8q7"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.88047445, 0.2257067, 0.73494333, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="LabelSettings" id="LabelSettings_pyidc"]
-line_spacing = 0.0
-font_size = 30
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq8q7"]
-size = Vector2(6, 6)
-
-[sub_resource type="LabelSettings" id="LabelSettings_vvh5c"]
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnlp7"]
+size = Vector2(8, 8)
 
 [node name="Root" type="Node2D"]
 
@@ -40,93 +14,22 @@ outline_color = Color(0, 0, 0, 1)
 wait_time = 1.3299999999999998
 autostart = true
 
-[node name="NumberItem" type="Area2D" parent="."]
-z_index = 5
-position = Vector2(32, 160)
-script = ExtResource("1_pq8q7")
-value = 4
+[node name="ConveyorBelt" parent="." instance=ExtResource("2_l8v81")]
+position = Vector2(96, 32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberItem"]
-shape = SubResource("RectangleShape2D_vho56")
-
-[node name="LabelBox" type="PanelContainer" parent="NumberItem"]
-layout_direction = 2
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pq8q7")
-
-[node name="Label" type="Label" parent="NumberItem/LabelBox"]
-layout_direction = 2
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_pyidc")
-horizontal_alignment = 1
-vertical_alignment = 1
-clip_text = true
-
-[node name="ConveyorBelt" type="Area2D" parent="."]
-position = Vector2(160, 160)
-script = ExtResource("2_vvh5c")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="ConveyorBelt"]
-sprite_frames = ExtResource("3_vvh5c")
-animation = &"gear_up"
-frame_progress = 0.40904468
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBelt"]
-visible = false
-shape = SubResource("RectangleShape2D_pq8q7")
-
-[node name="ConveyorInput" type="Area2D" parent="."]
+[node name="ConveyorInput" parent="." instance=ExtResource("3_jnlp7")]
 position = Vector2(352, 160)
-script = ExtResource("4_jnlp7")
+
+[node name="NumberGen" type="Area2D" parent="."]
+position = Vector2(32, 32)
+script = ExtResource("4_l8v81")
 metadata/_edit_group_ = true
 
-[node name="Sprite" type="AnimatedSprite2D" parent="ConveyorInput"]
-sprite_frames = ExtResource("4_28aoi")
-frame = 1
-frame_progress = 0.89139694
+[node name="Sprite" type="AnimatedSprite2D" parent="NumberGen"]
+position = Vector2(-32, 0)
+sprite_frames = ExtResource("6_l8v81")
+frame = 17
+frame_progress = 0.0052559907
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorInput"]
-visible = false
-shape = SubResource("RectangleShape2D_pq8q7")
-
-[node name="Score" type="HBoxContainer" parent="ConveyorInput"]
-layout_direction = 2
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -39.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="TargetLabel" type="Label" parent="ConveyorInput/Score"]
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_vvh5c")
-vertical_alignment = 1
-
-[node name="DepoLabel" type="Label" parent="ConveyorInput/Score"]
-layout_mode = 2
-text = "0/3"
-label_settings = SubResource("LabelSettings_vvh5c")
-vertical_alignment = 1
-
-[node name="NumberGen" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NumberGen"]
-
-[connection signal="input_event" from="NumberItem" to="NumberItem" method="_on_StaticBody2D_input_event"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberGen"]
+shape = SubResource("RectangleShape2D_jnlp7")

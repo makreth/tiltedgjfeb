@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7xyong4wg3if"]
+
+[ext_resource type="Script" uid="uid://b3hur6k6v8ntd" path="res://Scripts/item_mover.gd" id="1_24fe4"]
+[ext_resource type="SpriteFrames" uid="uid://dq0l0jdkd6j57" path="res://Resources/sprites/gear_rotate.tres" id="2_rk72j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq8q7"]
+size = Vector2(6, 6)
+
+[node name="ConveyorBelt" type="Area2D"]
+script = ExtResource("1_24fe4")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = ExtResource("2_rk72j")
+animation = &"gear_up"
+frame_progress = 0.40904468
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_pq8q7")

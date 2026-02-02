@@ -15,6 +15,7 @@ var locked := false
 var _should_push = false
 
 var sprite : AnimatedSprite2D
+var timer : Timer
 
 var _angle_mapping = {
 	Facing.INPUT : 0,
@@ -32,16 +33,13 @@ var _shift_mapping = {
 }
 
 func _ready() -> void:
-	var timer : Timer = get_node_or_null(stepTimerPath)
+	timer = get_node_or_null(stepTimerPath)
 	if not timer:
 		push_error("Timer not found.")
 		return
 	timer.timeout.connect(_toggle_should_push)
 
 	sprite = get_node_or_null(spritePath)
-
-	if sprite:
-		sprite.transform = sprite.transform.rotated(_angle_mapping[facing])
 
 	sprite.play()
 
