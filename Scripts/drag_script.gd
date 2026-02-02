@@ -7,6 +7,7 @@ var value := 1
 var labelPath := ^"LabelBox/Label"
 
 var is_dragging = false
+var is_pushed = false
 
 func _ready():
 	var l : Label = get_node_or_null(labelPath)
@@ -17,6 +18,7 @@ func _process(_delta):
 	if is_dragging:
 		var mousepos = get_viewport().get_mouse_position()
 		self.position = Vector2(mousepos.x, mousepos.y)
+		is_pushed = true
 
 func _toggleDraggingOn():
 	is_dragging=true
