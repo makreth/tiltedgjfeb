@@ -65,7 +65,7 @@ offset_bottom = 343.0
 theme_override_colors/default_color = Color(0.58978003, 0.63427687, 0.97886866, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Tilted Game Jam Jan/Feb 2026 Developers:
-Artemis Walker, Duncan Shepherd, Jacob Christ, Paul Primes"
+Artemis Welker, Duncan Shepherd, Jacob Christ, Paul Primes"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ig5kc")
