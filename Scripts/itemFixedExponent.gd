@@ -1,7 +1,7 @@
 class_name ItemFixedExponent extends ItemMachine
 
 @export
-var exponentToRaise := 1
+var exponentToRaise := 2
 
 @onready
 var _mover: ItemMover = $ItemMover as ItemMover
@@ -16,7 +16,7 @@ func _ready() -> void:
 	_mover.setTransformFunction(func(items):
 		var oldItem = items.get(0)
 		var newItem = _itemClass.instantiate() as Item
-		newItem.value = oldItem.value ^ exponentToRaise
+		newItem.value = oldItem.value ** exponentToRaise
 		get_tree().current_scene.add_child(newItem)
 		return newItem
 	)
