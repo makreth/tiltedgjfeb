@@ -54,7 +54,6 @@ func _prepareItemsForPush() -> Array[Item]:
 	var result: Array[Item] = []
 	for receiver in _linkedReceivers:
 		var currItem = receiver.getItem()
-		print(currItem)
 		if currItem and not currItem.isLocked():
 			result.append(currItem)
 	return result
@@ -72,7 +71,6 @@ func pushItem() -> void:
 	if _outputTarget.isLocked():
 		return
 	var resultItem = _transformer.call(items)
-	print(resultItem)
 	if items.size() > 1:
 		deleteItems(items)
 	if items.get(0).value != resultItem.value:
@@ -80,6 +78,8 @@ func pushItem() -> void:
 	resultItem.global_position =  Facing.adjacent(_outputDir, global_position, _shift)
 	
 func isLocked() -> bool:
+	if _prepareItemsForPush().size() != _linkedReceivers.size():
+		return true
 	if not _outputTarget:
 		return true
 	return _outputTarget.isLocked()
