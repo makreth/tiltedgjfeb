@@ -39,6 +39,9 @@ static func opposite(dir: Facing.CARDINAL) -> Facing.CARDINAL:
 	push_error("Invalid CARDINAL passed: " + str(dir))
 	return dir
 
+static func all() -> Array[CARDINAL]:
+	return [ CARDINAL.UP, CARDINAL.RIGHT, CARDINAL.DOWN, CARDINAL.LEFT ]
+
 static func allExcept(dir: CARDINAL) -> Array[CARDINAL]:
-	var arr: Array[CARDINAL] = [ CARDINAL.UP, CARDINAL.RIGHT, CARDINAL.DOWN, CARDINAL.LEFT ]
+	var arr = all()
 	return arr.filter(func(c): return c != dir)

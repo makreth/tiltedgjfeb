@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bf7na3fmrtpu3" path="res://Packed/ConveyorBelt.tscn" id="1_8kxov"]
 [ext_resource type="PackedScene" uid="uid://bubvjqsd2l4cu" path="res://Packed/Item.tscn" id="2_dlg4u"]
-[ext_resource type="PackedScene" uid="uid://by7ygh5f7r4hq" path="res://Packed/AddFixedMachine.tscn" id="3_0xdbv"]
+[ext_resource type="PackedScene" uid="uid://du28ged46ahng" path="res://Packed/AddBinaryMachine.tscn" id="3_0xdbv"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -11,19 +11,15 @@ anchor_mode = 0
 
 [node name="ConveyorBelt" parent="." instance=ExtResource("1_8kxov")]
 position = Vector2(96, 96)
-facing = 1
+facing = 2
 
 [node name="ConveyorBelt2" parent="." instance=ExtResource("1_8kxov")]
-position = Vector2(160, 96)
-facing = 1
+position = Vector2(224, 96)
+facing = 2
 
 [node name="ConveyorBelt3" parent="." instance=ExtResource("1_8kxov")]
-position = Vector2(224, 96)
-facing = 1
-
-[node name="ConveyorBelt4" parent="." instance=ExtResource("1_8kxov")]
-position = Vector2(416, 96)
-facing = 1
+position = Vector2(160, 224)
+facing = 2
 
 [node name="Item" parent="." instance=ExtResource("2_dlg4u")]
 position = Vector2(96, 96)
@@ -34,5 +30,5 @@ position = Vector2(224, 96)
 value = 2
 
 [node name="AddFixedMachine" parent="." instance=ExtResource("3_0xdbv")]
-position = Vector2(320, 96)
-facing = 1
+position = Vector2(160, 160)
+facing = 2
