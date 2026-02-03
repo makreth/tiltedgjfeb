@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf7na3fmrtpu3"]
+
+[ext_resource type="Script" uid="uid://c8d8nlbkig6fx" path="res://Scripts/itemMover.gd" id="1_hk060"]
+[ext_resource type="Script" uid="uid://dygjtshjs6u3e" path="res://Scripts/itemTransporter.gd" id="1_reccq"]
+[ext_resource type="Script" uid="uid://charp5oxyaipl" path="res://Scripts/itemReceiver.gd" id="2_w7608"]
+[ext_resource type="SpriteFrames" uid="uid://dq0l0jdkd6j57" path="res://Resources/sprites/gear_rotate.tres" id="4_061nk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usf1e"]
+size = Vector2(8, 8)
+
+[node name="ConveyorBelt" type="Node2D"]
+script = ExtResource("1_reccq")
+
+[node name="ItemMover" type="Area2D" parent="."]
+script = ExtResource("1_hk060")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMover"]
+shape = SubResource("RectangleShape2D_usf1e")
+
+[node name="ItemReceiver" type="Area2D" parent="."]
+script = ExtResource("2_w7608")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemReceiver"]
+shape = SubResource("RectangleShape2D_usf1e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_061nk")
+animation = &"gear_up"

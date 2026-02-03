@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://by7ygh5f7r4hq"]
+
+[ext_resource type="Script" uid="uid://c3tcd1ngpdnfg" path="res://Scripts/itemFixedAdder.gd" id="1_pd5il"]
+[ext_resource type="Script" uid="uid://c8d8nlbkig6fx" path="res://Scripts/itemMover.gd" id="2_okqcd"]
+[ext_resource type="Script" uid="uid://charp5oxyaipl" path="res://Scripts/itemReceiver.gd" id="3_3nq20"]
+[ext_resource type="SpriteFrames" uid="uid://mh22nx38gjr7" path="res://Resources/sprites/unary_machine.tres" id="3_sdpyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usf1e"]
+size = Vector2(8, 8)
+
+[node name="AddFixedMachine" type="Node2D"]
+script = ExtResource("1_pd5il")
+
+[node name="ItemMover" type="Area2D" parent="."]
+position = Vector2(-32, 0)
+script = ExtResource("2_okqcd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMover"]
+shape = SubResource("RectangleShape2D_usf1e")
+
+[node name="ItemReceiver" type="Area2D" parent="."]
+position = Vector2(32, 0)
+script = ExtResource("3_3nq20")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemReceiver"]
+shape = SubResource("RectangleShape2D_usf1e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_sdpyf")
