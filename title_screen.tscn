@@ -1,19 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cs1t52343ltre"]
+[gd_scene load_steps=4 format=3 uid="uid://cs1t52343ltre"]
 
 [ext_resource type="Script" uid="uid://44gm1pya8rev" path="res://title_screen.gd" id="1_ak2if"]
 [ext_resource type="VideoStream" uid="uid://d1fm8uekqprmt" path="res://Assets/title-screen/0001-0207.ogv" id="1_v6p8y"]
-[ext_resource type="AudioStream" uid="uid://cygf0cob132ic" path="res://Assets/JazzStems/Jazz1_Bass_110BPM_4-4_L16M_Pattern1 .wav" id="3_ig5kc"]
-[ext_resource type="AudioStream" uid="uid://crer8alvg0teu" path="res://Assets/JazzStems/Jazz1_Bass_110BPM_4-4_L16M_Pattern2.wav" id="4_n1yhu"]
-[ext_resource type="AudioStream" uid="uid://dtcnk55cvuuou" path="res://Assets/JazzStems/Jazz1_Bass_110BPM_4-4_L16M_Pattern3.wav" id="5_q7w76"]
-[ext_resource type="AudioStream" uid="uid://b44eiedm2a1qh" path="res://Assets/JazzStems/Jazz1_Bass_110BPM_4-4_L16M_Pattern4.wav" id="6_wot2p"]
-[ext_resource type="AudioStream" uid="uid://x0ib7a5u32pe" path="res://Assets/JazzStems/Jazz1_Percussion_110BPM_4-4_L16M_Pattern1.wav" id="7_kvwfe"]
-[ext_resource type="AudioStream" uid="uid://5gmo1hrgfo6n" path="res://Assets/JazzStems/Jazz1_Percussion_110BPM_4-4_L16M_Pattern2.wav" id="8_l4tom"]
-[ext_resource type="AudioStream" uid="uid://cwh2rwwpnlodc" path="res://Assets/JazzStems/Jazz1_Percussion_110BPM_4-4_L16M_Pattern3.wav" id="9_y8ura"]
-[ext_resource type="AudioStream" uid="uid://dqlappbljqvaa" path="res://Assets/JazzStems/Jazz1_Percussion_110BPM_4-4_L16M_Pattern4.wav" id="10_aav61"]
-[ext_resource type="AudioStream" uid="uid://s1xdnsdtyjxl" path="res://Assets/JazzStems/Jazz1_Percussion_110BPM_4-4_L16M_Pattern5.wav" id="11_a64np"]
-[ext_resource type="AudioStream" uid="uid://b16srtw5iffji" path="res://Assets/JazzStems/Jazz1_Piano_110BPM_4-4_L16M_Pattern1.wav" id="12_g2tdu"]
-[ext_resource type="AudioStream" uid="uid://brprnfhueqfqh" path="res://Assets/JazzStems/Jazz1_Piano_110BPM_4-4_L16M_Pattern2.wav" id="13_7yan6"]
-[ext_resource type="AudioStream" uid="uid://b36to5h4y6urr" path="res://Assets/JazzStems/Jazz1_Piano_110BPM_4-4_L16M_Pattern3.wav" id="14_4h4vs"]
+[ext_resource type="AudioStream" uid="uid://bqhv8jxo4lmnw" path="res://Assets/JazzStems/Jazzfull.wav" id="3_ig5kc"]
 
 [node name="Title Screen" type="Node2D"]
 script = ExtResource("1_ak2if")
@@ -69,50 +58,6 @@ Artemis Welker, Duncan Shepherd, Jacob Christ, Paul Primes"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ig5kc")
-autoplay = true
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_n1yhu")
-autoplay = true
-
-[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_q7w76")
-autoplay = true
-
-[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_wot2p")
-autoplay = true
-
-[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_kvwfe")
-autoplay = true
-
-[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_l4tom")
-autoplay = true
-
-[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_y8ura")
-autoplay = true
-
-[node name="AudioStreamPlayer2D8" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_aav61")
-autoplay = true
-
-[node name="AudioStreamPlayer2D9" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_a64np")
-autoplay = true
-
-[node name="AudioStreamPlayer2D10" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_g2tdu")
-autoplay = true
-
-[node name="AudioStreamPlayer2D11" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_7yan6")
-autoplay = true
-
-[node name="AudioStreamPlayer2D12" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_4h4vs")
 autoplay = true
 
 [connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
