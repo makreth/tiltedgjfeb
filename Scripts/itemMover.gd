@@ -54,6 +54,7 @@ func _prepareItemsForPush() -> Array[Item]:
 	var result: Array[Item] = []
 	for receiver in _linkedReceivers:
 		var currItem = receiver.getItem()
+		print(currItem)
 		if currItem and not currItem.isLocked():
 			result.append(currItem)
 	return result
