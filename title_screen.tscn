@@ -10,22 +10,30 @@ script = ExtResource("1_ak2if")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_left = -575.0
-offset_top = -326.0
-offset_right = 584.1111
-offset_bottom = 326.0
+offset_left = -448.77777
+offset_top = -255.0
+offset_right = 447.22223
+offset_bottom = 249.0
 stream = ExtResource("1_v6p8y")
 autoplay = true
 expand = true
 loop = true
 
-[node name="Start Game" type="Button" parent="."]
-offset_left = -94.0
-offset_top = 92.0
-offset_right = 88.0
-offset_bottom = 145.0
+[node name="Start Game 1" type="Button" parent="."]
+offset_left = -318.0
+offset_top = 271.0
+offset_right = -109.0
+offset_bottom = 324.0
 theme_override_font_sizes/font_size = 32
-text = "Start Game"
+text = "Start Game 1"
+
+[node name="Start Game 2" type="Button" parent="."]
+offset_left = 123.0
+offset_top = 270.0
+offset_right = 332.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 32
+text = "Start Game 2"
 
 [node name="Credits" type="Button" parent="."]
 visible = false
@@ -38,21 +46,21 @@ text = "Credits
 "
 
 [node name="Title" type="RichTextLabel" parent="."]
-offset_left = -518.0
-offset_top = 146.0
-offset_right = 548.0
-offset_bottom = 252.0
+offset_left = -384.0
+offset_top = -401.0
+offset_right = 411.0
+offset_bottom = -326.0
 theme_override_colors/default_color = Color(0.75603217, 0.09301693, 0.34265357, 1)
-theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/normal_font_size = 48
 text = "Panda Paul's Planetary Playhouse"
 
 [node name="Team" type="RichTextLabel" parent="."]
-offset_left = -452.0
-offset_top = 225.0
-offset_right = 494.0
-offset_bottom = 343.0
+offset_left = -408.0
+offset_top = 355.0
+offset_right = 424.0
+offset_bottom = 450.0
 theme_override_colors/default_color = Color(0.58978003, 0.63427687, 0.97886866, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 28
 text = "Tilted Game Jam Jan/Feb 2026 Developers:
 Artemis Welker, Duncan Shepherd, Jacob Christ, Paul Primes"
 
@@ -60,5 +68,6 @@ Artemis Welker, Duncan Shepherd, Jacob Christ, Paul Primes"
 stream = ExtResource("3_ig5kc")
 autoplay = true
 
-[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Start Game 1" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Start Game 2" to="." method="_on_start_game_2_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
