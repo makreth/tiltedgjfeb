@@ -2,11 +2,18 @@ class_name Facing
 
 enum CARDINAL {UP, RIGHT, DOWN, LEFT}
 
-static var _radianAngles := {
+const _radianAngles := {
 	CARDINAL.UP: 0,
 	CARDINAL.RIGHT: PI / 2,
 	CARDINAL.DOWN: PI,
 	CARDINAL.LEFT: 3 * PI / 2
+}
+
+const _opposites := {
+	CARDINAL.UP: CARDINAL.DOWN,
+	CARDINAL.RIGHT: CARDINAL.LEFT,
+	CARDINAL.DOWN: CARDINAL.UP,
+	CARDINAL.LEFT: CARDINAL.RIGHT,
 }
 
 static func radian(dir: Facing.CARDINAL) -> float:
@@ -27,17 +34,7 @@ static func adjacent(dir: Facing.CARDINAL, pos: Vector2, shift: int) -> Vector2:
 	return Vector2(x, y)
 
 static func opposite(dir: Facing.CARDINAL) -> Facing.CARDINAL:
-	match dir:
-		CARDINAL.UP:
-			return CARDINAL.DOWN
-		CARDINAL.RIGHT:
-			return CARDINAL.LEFT
-		CARDINAL.DOWN:
-			return CARDINAL.UP
-		CARDINAL.LEFT:
-			return CARDINAL.RIGHT
-	push_error("Invalid CARDINAL passed: " + str(dir))
-	return dir
+	return _opposites[dir]
 
 static func all() -> Array[CARDINAL]:
 	return [ CARDINAL.UP, CARDINAL.RIGHT, CARDINAL.DOWN, CARDINAL.LEFT ]
