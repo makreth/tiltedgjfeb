@@ -19,8 +19,8 @@ func initialize(lockableTarget, inputReceivers: Array[ItemReceiver], operation: 
 	if parent is Node2D:
 		rotation = -(parent as Node2D).global_rotation
 		
-func isLocked():
-	return _lockableTarget.isLocked()
+func isLocked() -> bool:
+	return _lockableTarget.isLocked() or !allReceiversFilled()
 
 func _prepareInputsForOperation() -> Array[int]:
 	var result: Array[int] = []
@@ -34,17 +34,19 @@ func _deleteItems() -> void:
 	for inputReceiver in _inputReceivers:
 		inputReceiver.deleteItem()
 
+func allReceiversFilled() -> bool:
+	return _prepareInputsForOperation().size() == _inputReceivers.size()
+
 func calculate() -> void:
 	if not _lockableTarget:
 		push_error("ItemTransformer must have a target to deposit the resulting Item.")
 		return
 	if _lockableTarget.isLocked():
 		return
-
-	var inputValues = _prepareInputsForOperation()
-	if inputValues.size() != _inputReceivers.size():
+	if !allReceiversFilled():
 		return
 
+	var inputValues = _prepareInputsForOperation()
 	var firstOperand = inputValues.get(0)
 	var outputItem = _inputReceivers.get(0).getItem()
 	if _inputReceivers.size() == 1:
