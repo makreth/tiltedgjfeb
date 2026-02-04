@@ -187,12 +187,6 @@ value = 1
 position = Vector2(875, 32)
 facing = 3
 
-[node name="ConveyorBelt36" parent="." instance=ExtResource("1_gte75")]
-position = Vector2(875, 96)
-
-[node name="ConveyorBelt37" parent="." instance=ExtResource("1_gte75")]
-position = Vector2(875, 160)
-
 [node name="ConveyorBelt38" parent="." instance=ExtResource("1_gte75")]
 position = Vector2(875, 224)
 
@@ -213,19 +207,12 @@ fixedValue = 4
 facing = 2
 
 [node name="EveryFixedMachine6" parent="." instance=ExtResource("5_wfl3t")]
-position = Vector2(811, 320)
+position = Vector2(875, 320)
 operation = 3
-facing = 2
 
 [node name="ConveyorBelt39" parent="." instance=ExtResource("1_gte75")]
 position = Vector2(811, 416)
 facing = 1
-
-[node name="ConveyorBelt40" parent="." instance=ExtResource("1_gte75")]
-position = Vector2(875, 288)
-
-[node name="ConveyorBelt41" parent="." instance=ExtResource("1_gte75")]
-position = Vector2(875, 352)
 
 [node name="ConveyorBelt42" parent="." instance=ExtResource("1_gte75")]
 position = Vector2(875, 416)
@@ -233,3 +220,12 @@ position = Vector2(875, 416)
 [node name="ConveyorBelt33" parent="." instance=ExtResource("1_gte75")]
 position = Vector2(811, 224)
 facing = 2
+
+[node name="EveryFixedMachine7" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(811, 320)
+operation = 1
+facing = 2
+
+[node name="EveryFixedMachine8" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(875, 128)
+fixedValue = 1
