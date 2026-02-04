@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8pitxln1wtbv"]
+
+[ext_resource type="Script" uid="uid://dusb1j44emefh" path="res://Scripts/itemFixedEvery.gd" id="1_wskm6"]
+[ext_resource type="Script" uid="uid://c8d8nlbkig6fx" path="res://Scripts/itemMover.gd" id="2_nvqa0"]
+[ext_resource type="Script" uid="uid://charp5oxyaipl" path="res://Scripts/itemReceiver.gd" id="3_5i28j"]
+[ext_resource type="SpriteFrames" uid="uid://mh22nx38gjr7" path="res://Resources/sprites/unary_machine.tres" id="4_sqt0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usf1e"]
+size = Vector2(8, 8)
+
+[node name="EveryFixedMachine" type="Node2D"]
+script = ExtResource("1_wskm6")
+
+[node name="ItemMover" type="Area2D" parent="."]
+position = Vector2(-32, 0)
+script = ExtResource("2_nvqa0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMover"]
+shape = SubResource("RectangleShape2D_usf1e")
+
+[node name="ItemReceiver" type="Area2D" parent="."]
+position = Vector2(32, 0)
+script = ExtResource("3_5i28j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemReceiver"]
+shape = SubResource("RectangleShape2D_usf1e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_sqt0i")
+
+[node name="Op Label" type="Label" parent="."]
+offset_left = -52.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 11.0
+pivot_offset = Vector2(20, 11.5)
+text = "OP"
+horizontal_alignment = 1
+vertical_alignment = 1

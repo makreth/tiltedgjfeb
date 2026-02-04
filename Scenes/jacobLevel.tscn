@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjpleb2xunsxn"]
+[gd_scene load_steps=5 format=3 uid="uid://iat21eyhfiby"]
 
 [ext_resource type="PackedScene" uid="uid://bf7na3fmrtpu3" path="res://Packed/ConveyorBelt.tscn" id="1_gte75"]
-[ext_resource type="PackedScene" uid="uid://du28ged46ahng" path="res://Packed/AddBinaryMachine.tscn" id="2_08gmo"]
-[ext_resource type="PackedScene" uid="uid://by7ygh5f7r4hq" path="res://Packed/AddFixedMachine.tscn" id="3_n4p31"]
+[ext_resource type="PackedScene" path="res://Packed/AddBinaryMachine.tscn" id="2_08gmo"]
 [ext_resource type="PackedScene" uid="uid://bubvjqsd2l4cu" path="res://Packed/Item.tscn" id="4_yuu7b"]
-[ext_resource type="PackedScene" uid="uid://b8pitxln1wtbv" path="res://Packed/ExponentFixedMachine.tscn" id="5_wfl3t"]
+[ext_resource type="PackedScene" uid="uid://b8pitxln1wtbv" path="res://Packed/EveryFixedMachine.tscn" id="5_wfl3t"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -123,23 +122,6 @@ facing = 2
 position = Vector2(416, 416)
 facing = 2
 
-[node name="AddFixedMachine2" parent="." instance=ExtResource("3_n4p31")]
-position = Vector2(96, 192)
-facing = 2
-
-[node name="AddFixedMachine5" parent="." instance=ExtResource("3_n4p31")]
-position = Vector2(256, 288)
-valueToAdd = 3
-facing = 1
-
-[node name="AddFixedMachine3" parent="." instance=ExtResource("3_n4p31")]
-position = Vector2(384, 32)
-facing = 1
-
-[node name="AddFixedMachine4" parent="." instance=ExtResource("3_n4p31")]
-position = Vector2(811, 126)
-facing = 2
-
 [node name="Item" parent="." instance=ExtResource("4_yuu7b")]
 position = Vector2(224, 32)
 value = 1
@@ -184,13 +166,13 @@ facing = 2
 position = Vector2(224, -352)
 value = 1
 
-[node name="ExponentFixedMachine" parent="." instance=ExtResource("5_wfl3t")]
+[node name="EveryFixedMachine" parent="." instance=ExtResource("5_wfl3t")]
 position = Vector2(544, 128)
-exponentToRaise = 2
 facing = 2
 
-[node name="ConveyorBelt33" parent="." instance=ExtResource("1_gte75")]
-position = Vector2(811, 224)
+[node name="EveryFixedMachine2" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(384, 32)
+fixedValue = 1
 facing = 1
 
 [node name="ConveyorBelt34" parent="." instance=ExtResource("1_gte75")]
@@ -213,3 +195,41 @@ position = Vector2(875, 160)
 
 [node name="ConveyorBelt38" parent="." instance=ExtResource("1_gte75")]
 position = Vector2(875, 224)
+
+[node name="EveryFixedMachine3" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(256, 288)
+fixedValue = 3
+facing = 1
+
+[node name="EveryFixedMachine4" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(96, 192)
+fixedValue = 1
+facing = 2
+
+[node name="EveryFixedMachine5" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(811, 128)
+operation = 2
+fixedValue = 4
+facing = 2
+
+[node name="EveryFixedMachine6" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(811, 320)
+operation = 3
+facing = 2
+
+[node name="ConveyorBelt39" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(811, 416)
+facing = 1
+
+[node name="ConveyorBelt40" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(875, 288)
+
+[node name="ConveyorBelt41" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(875, 352)
+
+[node name="ConveyorBelt42" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(875, 416)
+
+[node name="ConveyorBelt33" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(811, 224)
+facing = 2
