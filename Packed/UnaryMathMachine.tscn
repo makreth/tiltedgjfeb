@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8pitxln1wtbv"]
 
-[ext_resource type="Script" uid="uid://dtwbnva5tmwsv" path="res://Scripts/unaryMachine.gd" id="1_nvqa0"]
-[ext_resource type="Script" uid="uid://charp5oxyaipl" path="res://Scripts/itemReceiver.gd" id="3_5i28j"]
-[ext_resource type="Script" uid="uid://n8oknhffvyem" path="res://Scripts/itemCalculator.gd" id="4_nvqa0"]
+[ext_resource type="Script" uid="uid://dtwbnva5tmwsv" path="res://Scripts/machine/unaryMachine.gd" id="1_nvqa0"]
+[ext_resource type="Script" uid="uid://charp5oxyaipl" path="res://Scripts/machine/components/itemReceiver.gd" id="3_5i28j"]
+[ext_resource type="Script" uid="uid://n8oknhffvyem" path="res://Scripts/machine/components/itemCalculator.gd" id="4_nvqa0"]
 [ext_resource type="SpriteFrames" uid="uid://mh22nx38gjr7" path="res://Resources/sprites/unary_machine.tres" id="4_sqt0i"]
 [ext_resource type="PackedScene" uid="uid://dt8fsl15bq120" path="res://Packed/ItemTransporter.tscn" id="5_5i28j"]
 

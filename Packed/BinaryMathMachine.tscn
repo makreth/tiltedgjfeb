@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://du28ged46ahng"]
 
-[ext_resource type="Script" uid="uid://1is2mmjko6ua" path="res://Scripts/binaryMachine.gd" id="1_h8qk8"]
-[ext_resource type="Script" uid="uid://charp5oxyaipl" path="res://Scripts/itemReceiver.gd" id="3_ytnq4"]
+[ext_resource type="Script" uid="uid://1is2mmjko6ua" path="res://Scripts/machine/binaryMachine.gd" id="1_h8qk8"]
+[ext_resource type="Script" uid="uid://charp5oxyaipl" path="res://Scripts/machine/components/itemReceiver.gd" id="3_ytnq4"]
 [ext_resource type="SpriteFrames" uid="uid://bdu3eyu0mwmgj" path="res://Resources/sprites/binary_machine.tres" id="4_6ytph"]
 [ext_resource type="PackedScene" uid="uid://dt8fsl15bq120" path="res://Packed/ItemTransporter.tscn" id="5_h8qk8"]
-[ext_resource type="Script" uid="uid://n8oknhffvyem" path="res://Scripts/itemCalculator.gd" id="5_hs22x"]
+[ext_resource type="Script" uid="uid://n8oknhffvyem" path="res://Scripts/machine/components/itemCalculator.gd" id="5_hs22x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usf1e"]
 size = Vector2(8, 8)
