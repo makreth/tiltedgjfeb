@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt8fsl15bq120"]
+
+[ext_resource type="Script" uid="uid://dygjtshjs6u3e" path="res://Scripts/itemTransporter.gd" id="1_s52ha"]
+[ext_resource type="Script" uid="uid://c8d8nlbkig6fx" path="res://Scripts/itemMover.gd" id="2_ojfm8"]
+[ext_resource type="Script" uid="uid://charp5oxyaipl" path="res://Scripts/itemReceiver.gd" id="3_wufhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usf1e"]
+size = Vector2(8, 8)
+
+[node name="ItemTransporter" type="Node2D"]
+script = ExtResource("1_s52ha")
+
+[node name="ItemMover" type="Area2D" parent="."]
+script = ExtResource("2_ojfm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMover"]
+shape = SubResource("RectangleShape2D_usf1e")
+
+[node name="ItemReceiver" type="Area2D" parent="."]
+script = ExtResource("3_wufhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemReceiver"]
+shape = SubResource("RectangleShape2D_usf1e")
