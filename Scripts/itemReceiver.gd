@@ -2,11 +2,11 @@ class_name ItemReceiver extends Area2D
 
 var _validInputDirections : Array[Facing.CARDINAL]
 var _item: Item
-var _linkedMover: ItemMover
+var _lockableTarget
 
-func initialize(validInputDirections: Array[Facing.CARDINAL], linkedMover: ItemMover):
+func initialize(validInputDirections: Array[Facing.CARDINAL], lockableTarget):
 	_validInputDirections = validInputDirections
-	_linkedMover = linkedMover
+	_lockableTarget = lockableTarget
 	ORCHESTRATOR.registerPoll(poll, 2)
 
 func poll() -> void:
@@ -29,10 +29,16 @@ func pollForItem() -> Item:
 	return areas[0] as Item
 
 func isLocked():
-	return _item && _linkedMover.isLocked()
+	return _item && _lockableTarget.isLocked()
 
 func isFacingValid(dir: Facing.CARDINAL) -> bool:
 	return dir in _validInputDirections
 
 func getItem() -> Item:
+	if _item and _item.isLocked():
+		return null
 	return _item
+
+func deleteItem() -> void:
+	_item.queue_free()
+	_item = null
