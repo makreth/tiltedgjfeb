@@ -218,6 +218,10 @@ value = 1
 position = Vector2(224, -224)
 value = 1
 
+[node name="Item7" parent="." instance=ExtResource("4_yuu7b")]
+position = Vector2(224, -352)
+value = 1
+
 [node name="Item9" parent="." instance=ExtResource("4_yuu7b")]
 position = Vector2(800, 32)
 value = 1
