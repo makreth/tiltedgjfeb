@@ -1,5 +1,7 @@
 class_name Item extends Area2D
 
+static var _itemScene = preload("res://Packed/Item.tscn")
+
 @export
 var value: int:
 	get:
@@ -15,6 +17,11 @@ var _moving = false
 
 func _ready() -> void:
 	updateLabel()
+
+static func createWithScene(newValue: int) -> Item:
+	var newItem = _itemScene.instantiate() as Item
+	newItem.value = newValue
+	return newItem
 
 func isLocked() -> bool:
 	return _moving
