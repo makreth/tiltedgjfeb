@@ -12,7 +12,7 @@ func initialize(lockableTarget, inputReceivers: Array[ItemReceiver], operation: 
 	_inputReceivers = inputReceivers
 	_operationFunction = Operation.getOperationFunction(operation, fixedSecondOperand)
 	text = Operation.toString(operation)
-	if fixedSecondOperand > 0:
+	if fixedSecondOperand >= 0 && !(operation == Operation.TYPE.NOT || operation == Operation.TYPE.FACTORIAL):
 		text += str(fixedSecondOperand)
 	ORCHESTRATOR.registerExecute(calculate, 2)
 	var parent = get_parent()

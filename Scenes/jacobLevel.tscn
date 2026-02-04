@@ -158,21 +158,22 @@ facing = 2
 
 [node name="UnaryMathMachine5" parent="." instance=ExtResource("5_wfl3t")]
 position = Vector2(800, 128)
-fixedValue = 4
-operation = 2
+operation = 8
 
 [node name="UnaryMathMachine6" parent="." instance=ExtResource("5_wfl3t")]
 position = Vector2(864, 128)
+operation = 6
 facing = 2
 
 [node name="UnaryMathMachine8" parent="." instance=ExtResource("5_wfl3t")]
 position = Vector2(864, 320)
-operation = 3
+operation = 11
 facing = 2
 
 [node name="UnaryMathMachine7" parent="." instance=ExtResource("5_wfl3t")]
 position = Vector2(800, 320)
-operation = 1
+fixedValue = 0
+operation = 7
 
 [node name="UnaryMathMachine2" parent="." instance=ExtResource("5_wfl3t")]
 position = Vector2(384, 32)
@@ -224,4 +225,48 @@ value = 1
 
 [node name="Item9" parent="." instance=ExtResource("4_yuu7b")]
 position = Vector2(800, 32)
+value = 1
+
+[node name="ConveyorBelt36" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(800, 480)
+facing = 1
+
+[node name="ConveyorBelt37" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(864, 480)
+facing = 2
+
+[node name="ConveyorBelt40" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(864, 672)
+facing = 2
+
+[node name="ConveyorBelt41" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(800, 864)
+
+[node name="ConveyorBelt43" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(864, 864)
+facing = 3
+
+[node name="ConveyorBelt44" parent="." instance=ExtResource("1_gte75")]
+position = Vector2(800, 672)
+
+[node name="UnaryMathMachine9" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(800, 576)
+fixedValue = 3
+
+[node name="UnaryMathMachine10" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(864, 576)
+operation = 5
+facing = 2
+
+[node name="UnaryMathMachine11" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(864, 768)
+facing = 2
+
+[node name="UnaryMathMachine12" parent="." instance=ExtResource("5_wfl3t")]
+position = Vector2(800, 768)
+fixedValue = 2
+operation = 4
+
+[node name="Item10" parent="." instance=ExtResource("4_yuu7b")]
+position = Vector2(800, 480)
 value = 1
